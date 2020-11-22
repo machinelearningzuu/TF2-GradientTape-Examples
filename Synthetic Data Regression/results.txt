@@ -1,0 +1,35 @@
+device : /gpu:0
+Model: "Linear_Regression_Model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            (None, 1)                 0         
+_________________________________________________________________
+dense (Dense)                (None, 128)               256       
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 129       
+=================================================================
+Total params: 385
+Trainable params: 385
+Non-trainable params: 0
+_________________________________________________________________
+Epoch : 1, train loss : 4.933, test loss : 4.933
+Epoch : 2, train loss : 3.687, test loss : 3.687
+Epoch : 3, train loss : 2.664, test loss : 2.664
+Epoch : 4, train loss : 1.802, test loss : 1.802
+Epoch : 5, train loss : 1.129, test loss : 1.129
+Epoch : 6, train loss : 0.643, test loss : 0.643
+Epoch : 7, train loss : 0.343, test loss : 0.343
+Epoch : 8, train loss : 0.195, test loss : 0.195
+Epoch : 9, train loss : 0.131, test loss : 0.131
+Epoch : 10, train loss : 0.106, test loss : 0.106
+Epoch : 11, train loss : 0.091, test loss : 0.091
+Epoch : 12, train loss : 0.077, test loss : 0.077
+Epoch : 13, train loss : 0.068, test loss : 0.068
+Epoch : 14, train loss : 0.059, test loss : 0.059
+Epoch : 15, train loss : 0.052, test loss : 0.052
+Epoch : 16, train loss : 0.047, test loss : 0.047
+Epoch : 17, train loss : 0.041, test loss : 0.041
+Epoch : 18, train loss : 0.036, test loss : 0.036
+Epoch : 19, train loss : 0.032, test loss : 0.032
+Epoch : 20, train loss : 0.028, test loss : 0.028
