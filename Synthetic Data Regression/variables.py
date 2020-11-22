@@ -5,4 +5,5 @@ batch_size = 64
 shuffle_buffer_size = 100
 input_shape = (1,)
 dense1 = 128
+dense2 = 64
 epoches = 25
