@@ -1,0 +1,45 @@
+device : /gpu:0
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 512)               401920    
+_________________________________________________________________
+dense_1 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+dense_2 (Dense)              (None, 256)               65792     
+_________________________________________________________________
+batch_normalization (BatchNo (None, 256)               1024      
+_________________________________________________________________
+dense_3 (Dense)              (None, 64)                16448     
+_________________________________________________________________
+dense_4 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dense_5 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dropout (Dropout)            (None, 64)                0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 10)                650       
+=================================================================
+Total params: 625,482
+Trainable params: 624,970
+Non-trainable params: 512
+_________________________________________________________________
+Epoch : 1, train loss : 0.573, train accuracy : 0.793, val loss : 0.414, val accuracy : 0.852
+Epoch : 2, train loss : 0.392, train accuracy : 0.857, val loss : 0.377, val accuracy : 0.86
+Epoch : 3, train loss : 0.348, train accuracy : 0.872, val loss : 0.353, val accuracy : 0.874
+Epoch : 4, train loss : 0.32, train accuracy : 0.883, val loss : 0.357, val accuracy : 0.873
+Epoch : 5, train loss : 0.306, train accuracy : 0.887, val loss : 0.341, val accuracy : 0.879
+Epoch : 6, train loss : 0.286, train accuracy : 0.895, val loss : 0.33, val accuracy : 0.879
+Epoch : 7, train loss : 0.275, train accuracy : 0.898, val loss : 0.332, val accuracy : 0.882
+Epoch : 8, train loss : 0.259, train accuracy : 0.903, val loss : 0.33, val accuracy : 0.885
+Epoch : 9, train loss : 0.252, train accuracy : 0.907, val loss : 0.313, val accuracy : 0.891
+Epoch : 10, train loss : 0.243, train accuracy : 0.91, val loss : 0.328, val accuracy : 0.883
+Epoch : 11, train loss : 0.236, train accuracy : 0.912, val loss : 0.324, val accuracy : 0.889
+Epoch : 12, train loss : 0.226, train accuracy : 0.915, val loss : 0.355, val accuracy : 0.877
+Epoch : 13, train loss : 0.217, train accuracy : 0.918, val loss : 0.329, val accuracy : 0.886
+Epoch : 14, train loss : 0.209, train accuracy : 0.92, val loss : 0.346, val accuracy : 0.89
+Epoch : 15, train loss : 0.202, train accuracy : 0.924, val loss : 0.328, val accuracy : 0.886
+
+---------------Evaluation----------------
+test loss : 0.332, test acc : 0.885
