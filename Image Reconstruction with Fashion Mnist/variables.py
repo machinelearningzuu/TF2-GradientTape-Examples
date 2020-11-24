@@ -1,0 +1,15 @@
+train_path = 'data/fashion-mnist_train.csv'
+test_path = 'data/fashion-mnist_test.csv'
+model_path = 'data/model_weights'
+shuffle_buffer_size = 1000
+batch_size = 128
+split = 0.8
+seed = 12
+input_shape = (784,)
+size = int(input_shape[0] ** 0.5)
+dense1 = 512
+dense2 = 256
+dense3 = 64
+output = 10
+keep_prob = 0.5
+epoches = 15
