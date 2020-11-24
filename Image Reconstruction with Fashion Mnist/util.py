@@ -39,18 +39,22 @@ def get_random_item(TFtest):
     n_batches = len(list(TFtest))
 
     rand_batch_idx = np.random.choice(n_batches)
-    rand_batch = list(TFtrain)[rand_batch_idx]
+    rand_batch = list(TFtest)[rand_batch_idx]
 
-    batch_image = rand_batch[0].numpy()
-    batch_label = rand_batch[1].numpy()
+    batch_image = rand_batch[0]
+    batch_label = rand_batch[1]
 
-    image_idx = np.random.choice(batch_size)
+    image_idx = np.random.choice(len(batch_image))
     image = batch_image[image_idx]
     label = batch_label[image_idx]
-    image = tf.constant(image, dtype=tf.float32)
+    image = tf.expand_dims(
+                        image, 
+                        axis=0
+                        )
+    image = tf.cast(image, dtype=tf.float32)
     return image, label
 
-def plot_item(Ximg, Yimg, width=5, height=5, rows = 1, cols = 2):
+def plot_item(Ximg, Yimg, plt_img, width=5, height=5, rows = 1, cols = 2):
     f = plt.figure()
 
     f.add_subplot(1,2, 1)
@@ -60,5 +64,5 @@ def plot_item(Ximg, Yimg, width=5, height=5, rows = 1, cols = 2):
     f.add_subplot(1,2, 2)
     plt.title('Reconstructed Image')
     plt.imshow(Yimg)
-
+    plt.savefig(plt_img)
     plt.show(block=True)

@@ -84,13 +84,14 @@ class ImageReconstruction(object):
     def save_and_load(self):
         if os.path.exists(model_path):
             print("model loading")
-            loaded = tf.saved_model.load(model_path)
-            self.model = loaded.signatures["serving_default"]
+            loaded = tf.keras.models.load_model(model_path)
+            self.model = loaded
+
         else:
             print("model saving")
             self.build()
             self.train()
-            tf.saved_model.save(self.model, model_path)
+            self.model.save(model_path)
 
     def evaluation(self):
         Test_loss = []
@@ -104,16 +105,17 @@ class ImageReconstruction(object):
         print("\n----Evaluation----")
         print("test loss : {}".format(avg_test_loss))
 
-    def predictions(self):
-        img = get_random_item(self.TFtest)
-        Pimg= self.model(img)
-        
-        img = img.numpy()
-        Pimg = Pimg.numpy()
-
-        img = img.reshape(size, size)
-        Pimg = Pimg.reshape(size, size)
-        plot_item(Ximg, Yimg)
+    def predictions(self, n_inference=10):
+        for i in range(1, n_inference+1):
+            plt_img = infer_img.format(i)
+            img, label = get_random_item(self.TFtest)
+            Pimg= self.model(img)
+            
+            img = img.numpy()
+            Pimg = Pimg.numpy()
+            img = img.reshape(size, size)
+            Pimg = Pimg.reshape(size, size)
+            plot_item(img, Pimg, plt_img)
     
     def run(self):
         self.save_and_load()

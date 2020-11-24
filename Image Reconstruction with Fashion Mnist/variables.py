@@ -1,6 +1,7 @@
 train_path = 'data/fashion-mnist_train.csv'
 test_path = 'data/fashion-mnist_test.csv'
-model_path = 'data/model_weights'
+model_path = 'data/model_weights.h5'
+infer_img = 'visualization/inference_{}.png'
 shuffle_buffer_size = 1000
 batch_size = 128
 split = 0.8
